@@ -5,59 +5,24 @@ import { dashboard } from '@wix/dashboard';
 import { httpClient } from "@wix/essentials";
 import { items, collections} from "@wix/data";
 import { DataCollection } from '@wix/wix-ui-icons-common';
-//import { local } from "wix-storage-frontend";
-/**let collection3 :DataCollection= new DataCollection({
-  _id: '123',
-  fields: {
-    key: 'cost',
-    type: 'TEXT'
-  },
-  permissions: {
-    insert: 'ADMIN',
-    remove: 'ADMIN',
-    read: 'ADMIN',
-    update: 'ADMIN'
-  }
-});
-collections.createDataCollection({collection: collection3});*/
-//let newCol : Partial<collections.DataCollection>;
-//newCol = {
-  //_id: '123',
- // fields: Array<Field>(
-   // key: 'cost',
-   // type: 'TEXT'
- // )//,
-  //permissions: {
-    //insert: 'ADMIN',
-    //remove: 'ADMIN',
-    //read: 'ADMIN',
-    //update: 'ADMIN'
-  //}
-//};
-//collections.createDataCollection(newCol);
-//type DeliveryFee  = {
-//  feeName: string,
- // price: string
-//}
-console.log("BBEEEEEEEEEEEp");
-//necessary-------------------------------------------------------------------------------------------------------------
-//let result = await httpClient.fetchWithAuth(`${import.meta.env.BASE_API_URL}/extra-fees-api`);
-//result.text().then((s)=>{console.log("ddd")});
-let result = await httpClient.fetchWithAuth(`${import.meta.env.BASE_API_URL}/extra-fees-api`);
-let text = await result.json();
-console.log(text);
-//const result = await response;
-//console.log(result);
-//response.text().then((str)=>{console.log(str)});
-console.log("BBEEEEEEEEEגEEp");
-//const data2 = await response.text; WAS!!!!!!!!!!!!!!!!!!!!!!
-const data2 = "33";
-//const data = "6";
-//let  fee1:DeliveryFee = {feeName:"deliv",price:"5"};
+import { Http2ServerRequest } from 'http2';
+let myData = 'Wait for loaded data...';
+
+//necessary----------------------------------------------------------------------------------------------------------
+// ---
+/**let res = httpClient.fetchWithAuth(`${import.meta.env.BASE_API_URL}/extra-fees-api`);
+Promise.resolve(res).then((res)=>{return res.text()}).then((str)=>{myData = str});
+*/
+async function main(){
+//await httpClient.fetchWithAuth(`${import.meta.env.BASE_API_URL}/extra-fees-api`).then(res=>res.text());
+let c = await fetch(`${import.meta.env.BASE_API_URL}/extra-fees-api`).then(res=>res.text());
+return c;
+}
+const txt = await main();
+myData = txt;
 const DashboardPage: FC = () => {
     const [inputText, setInputText] = React.useState(
-      //data
-      data2
+     myData
     );
   return (
     <WixDesignSystemProvider features={{ newColorsBranding: true }}>
