@@ -1,0 +1,4 @@
+export type DeliveryFee = {
+    feeName: string,
+    price: string
+}
