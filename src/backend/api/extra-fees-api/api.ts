@@ -1,14 +1,10 @@
 //import { sql } from '@velo/wix-data-sql-backend';
+
 export async function GET(req: Request) {
   console.log("AVO");
   console.log('Log from GET.');
-  try{
-    console.log('MongoDB connected successfully');
-}
-catch(error){
-    console.error('MongoDB connection error:', error);
-};
-
+  //let val = "0";
+  //await sql('INSERT INTO DelivValue (value) values ('+val+')');
   return new Response('222');
 };
 

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/site-plugin.json",
+  "id": "6faa12c4-fd1e-4171-a135-a54d34125c82",
+  "referenceComponentId": "06623509-bfad-4611-a04b-c1493f71a0af",
+  "marketData": {
+    "name": "My Site Plugin",
+    "logoUrl": "C:\\Users\\danbe\\my-wix-app\\src\\site\\plugins\\wix_logo.svg\\"
+  },
+  "placements": [
+    {
+      "appDefinitionId": "a0c68605-c2e7-4c8d-9ea1-767f9770e087",
+      "widgetId": "6a25b678-53ec-4b37-a190-65fcd1ca1a63",
+      "slotId": "product-page-details-1"
+    }
+  ],
+  "installation": {
+    "autoAddToSite": true
+  }
+}
+
