@@ -1,0 +1,7 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/dashboard-modal.json",
+  "id": "d0269393-69d0-494b-846b-8528ddfe47cb",
+  "title": "Extra Costs",
+  "width": 550,
+  "height": 600
+}

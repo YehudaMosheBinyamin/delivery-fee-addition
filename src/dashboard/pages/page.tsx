@@ -1,59 +1,30 @@
 import React, { type FC } from 'react';
-import { dashboard } from '@wix/dashboard';
-import {
-  Button,
-  EmptyState,
-  Image,
-  Page,
-  TextButton,
-  WixDesignSystemProvider,
-} from '@wix/design-system';
+import { Button, EmptyState, Page, WixDesignSystemProvider } from '@wix/design-system';
 import '@wix/design-system/styles.global.css';
-import * as Icons from '@wix/wix-ui-icons-common';
-import wixLogo from './wix_logo.svg';
-
-const Index: FC = () => {
+import { dashboard } from '@wix/dashboard';
+const DashboardPage: FC = () => {
   return (
     <WixDesignSystemProvider features={{ newColorsBranding: true }}>
       <Page>
         <Page.Header
-          title="Dashboard Page"
-          subtitle="Add management capabilities to your app."
+          title="Dashboard1"
+          subtitle="This is a subtitle for your page"
           actionsBar={
-            <Button
-              onClick={() => {
-                dashboard.showToast({
-                  message: 'Your first toast message!',
-                });
-              }}
-              prefixIcon={<Icons.GetStarted />}
-            >
-              Show a toast
+            <Button>
+              onClick={()=>dashboard.openModal('d0269393-69d0-494b-846b-8528ddfe47cb')};
             </Button>
           }
         />
         <Page.Content>
           <EmptyState
-            image={
-              <Image fit="contain" height="100px" src={wixLogo} transparent />
-            }
-            title="Start editing this dashboard page"
-            subtitle="Learn how to work with dashboard pages and how to add functionality to them using Wix APIs."
+            title="Dashboard"
+            subtitle="Edit src\dashboard\pages\dashboard\page.tsx to change this text."
             theme="page"
-          >
-            <TextButton
-              as="a"
-              href="https://dev.wix.com/docs/build-apps/develop-your-app/frameworks/wix-cli/supported-extensions/dashboard-extensions/dashboard-pages/add-dashboard-page-extensions-with-the-cli#add-dashboard-page-extensions-with-the-cli"
-              target="_blank"
-              prefixIcon={<Icons.ExternalLink />}
-            >
-              Dashboard pages documentation
-            </TextButton>
-          </EmptyState>
+          />
         </Page.Content>
       </Page>
     </WixDesignSystemProvider>
   );
 };
 
-export default Index;
+export default DashboardPage;
